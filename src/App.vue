@@ -18,7 +18,6 @@ export default {
   data() {
     return {
       results: [],
-      apiKey: "a1851be38bmshc3fa68bafe8f5a7p1db595jsnf532076fd47a",
     }
   },
   methods: {
@@ -26,7 +25,7 @@ export default {
       fetch(`https://movie-database-imdb-alternative.p.rapidapi.com/?s=${title}&page=1&r=json`, {
         "method": "GET",
         "headers": {
-          "x-rapidapi-key": this.apiKey,
+          "x-rapidapi-key": process.env.VUE_APP_API_KEY,
           "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
         }
       })
